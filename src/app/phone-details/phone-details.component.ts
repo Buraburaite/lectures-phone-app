@@ -10,6 +10,8 @@ import { PhoneService } from '../phone.service';
 })
 export class PhoneDetailsComponent implements OnInit {
 
+  phone: Object;
+
   constructor(
     private myRoute: ActivatedRoute,
     private myPhoneService: PhoneService
@@ -23,12 +25,12 @@ export class PhoneDetailsComponent implements OnInit {
 
   getPhoneDetails(id) {
     this.myPhoneService.get(id)
-    .then((thePhoneDetails) => {
-      this.phone = thePhoneDetails;
-    })
-    .catch((err) => {
-      console.log('ERROR', err)
-    });
+      .then((thePhoneDetails) => {
+        this.phone = thePhoneDetails;
+      })
+      .catch((err) => {
+        console.log('ERROR', err);
+      });
   }
 
 }

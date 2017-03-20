@@ -3,10 +3,11 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PhoneListComponent } from './phone-list/phone-list.component';
 import { PhoneDetailsComponent } from './phone-details/phone-details.component';
-import { PhoneService } from './phone.service'
+import { PhoneService } from './phone.service';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PhoneService } from './phone.service'
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [PhoneService],
   bootstrap: [AppComponent]

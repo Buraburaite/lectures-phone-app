@@ -4,10 +4,10 @@
 
 <div class="phone-list">
   <div *ngFor="let onePhone of phones">
-    <img [src]="onePhone.img">
+    <img [src]="onePhone.image">
     <h3> {{ onePhone.name }} </h3>
     <p> {{ onePhone.brand }} </p>
-    <a [routerLink]="['phone', onePhone.id]">
+    <a [routerLink]="['phone', onePhone._id]">
       View Details
     </a>
   </div>
