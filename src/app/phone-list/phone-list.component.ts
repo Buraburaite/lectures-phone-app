@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
+import { PhoneService } from '../phone.service'
+
 @Component({
   selector: 'app-phone-list',
   templateUrl: './phone-list.component.html',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PhoneListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myPhoneService: PhoneService) { }
 
   ngOnInit() {
+    this.myPhoneService.getList()
+    .then((apiResult) => {
+      console.log(apiResult);
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   }
 
 }
