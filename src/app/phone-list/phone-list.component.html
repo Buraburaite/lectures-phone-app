@@ -1,3 +1,9 @@
-<p>
-  phone-list works!
-</p>
+<h2> Phone List </h2>
+
+<div>
+  <div *ngFor="let onePhone of phones">
+    <img [src]="onePhone.img">
+    <h3> {{ onePhone.name }} </h3>
+    <p> {{ onePhone.brand }} </p>
+  </div>
+</div>

@@ -9,12 +9,14 @@ import { PhoneService } from '../phone.service'
 })
 export class PhoneListComponent implements OnInit {
 
+  phones: Array<any> = [];
+
   constructor(private myPhoneService: PhoneService) { }
 
   ngOnInit() {
     this.myPhoneService.getList()
-    .then((apiResult) => {
-      console.log(apiResult);
+    .then((phonesList) => {
+      this.phones = phonesList
     })
     .catch((err) => {
       console.log(err);
